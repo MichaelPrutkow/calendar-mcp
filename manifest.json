@@ -10,7 +10,11 @@
   },
   "server": {
     "type": "uv",
-    "entry_point": "src/calendar_mcp/server.py"
+    "entry_point": "src/calendar_mcp/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "src/calendar_mcp/server.py"]
+    }
   },
   "tools": [
     {
