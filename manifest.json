@@ -2,9 +2,9 @@
   "manifest_version": "0.4",
   "name": "apple-calendar",
   "display_name": "Calendar MCP",
-  "version": "0.1.0",
-  "description": "Read and create Apple Calendar events (including recurring ones) from Claude.",
-  "long_description": "A small local MCP server built on EventKit. It lets Claude list your calendars, read upcoming events and create new events with location, notes and recurrence rules. macOS only; the first use asks for calendar access.",
+  "version": "0.2.0",
+  "description": "Read and create Apple Calendar events and reminders from Claude.",
+  "long_description": "A small local MCP server built on EventKit. Lists calendars, events, reminder lists and open reminders, and creates events and reminders with location, notes, priority and recurrence. macOS only; the first use asks for calendar and reminders access.",
   "author": {
     "name": "Michael Prutkow"
   },
@@ -13,26 +13,51 @@
     "entry_point": "src/calendar_mcp/server.py",
     "mcp_config": {
       "command": "uv",
-      "args": ["run", "--directory", "${__dirname}", "src/calendar_mcp/server.py"]
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "src/calendar_mcp/server.py"
+      ]
     }
   },
   "tools": [
     {
       "name": "list_calendars",
-      "description": "List all calendars with account and writability."
+      "description": "List all event calendars."
     },
     {
       "name": "list_events",
-      "description": "List upcoming events, optionally filtered by calendar."
+      "description": "List events in a time range."
     },
     {
       "name": "create_event",
-      "description": "Create an event, optionally recurring, with location and notes."
+      "description": "Create an event, optionally recurring."
+    },
+    {
+      "name": "list_reminder_lists",
+      "description": "List all reminder lists."
+    },
+    {
+      "name": "list_reminders",
+      "description": "List open reminders, sorted by due date."
+    },
+    {
+      "name": "create_reminder",
+      "description": "Create a reminder, optionally recurring."
     }
   ],
-  "keywords": ["calendar", "apple", "eventkit", "macos"],
+  "keywords": [
+    "calendar",
+    "reminders",
+    "apple",
+    "eventkit",
+    "macos"
+  ],
   "compatibility": {
-    "platforms": ["darwin"],
+    "platforms": [
+      "darwin"
+    ],
     "runtimes": {
       "python": ">=3.13"
     }

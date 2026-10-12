@@ -1,7 +1,7 @@
 [project]
 name = "calendar-mcp"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.2.0"
+description = "MCP server for Apple Calendar events and reminders"
 readme = "README.md"
 authors = [
     { name = "Michael Prutkow", email = "michael.prutkow@tum.de" }
