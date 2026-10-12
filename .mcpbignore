@@ -1,0 +1,9 @@
+.venv/
+.git/
+.gitignore
+.DS_Store
+**/.DS_Store
+**/__pycache__/
+*.mcpb
+assets/
+uv.lock.bak

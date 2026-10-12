@@ -1,0 +1,36 @@
+{
+  "manifest_version": "0.4",
+  "name": "apple-calendar",
+  "display_name": "Apple Calendar",
+  "version": "0.1.0",
+  "description": "Read and create Apple Calendar events (including recurring ones) from Claude.",
+  "long_description": "A small local MCP server built on EventKit. It lets Claude list your calendars, read upcoming events and create new events with location, notes and recurrence rules. macOS only; the first use asks for calendar access.",
+  "author": {
+    "name": "Michael Prutkow"
+  },
+  "server": {
+    "type": "uv",
+    "entry_point": "src/calendar_mcp/server.py"
+  },
+  "tools": [
+    {
+      "name": "list_calendars",
+      "description": "List all calendars with account and writability."
+    },
+    {
+      "name": "list_events",
+      "description": "List upcoming events, optionally filtered by calendar."
+    },
+    {
+      "name": "create_event",
+      "description": "Create an event, optionally recurring, with location and notes."
+    }
+  ],
+  "keywords": ["calendar", "apple", "eventkit", "macos"],
+  "compatibility": {
+    "platforms": ["darwin"],
+    "runtimes": {
+      "python": ">=3.13"
+    }
+  }
+}
