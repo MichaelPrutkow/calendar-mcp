@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.4",
   "name": "apple-calendar",
-  "display_name": "Apple Calendar",
+  "display_name": "Calendar MCP",
   "version": "0.1.0",
   "description": "Read and create Apple Calendar events (including recurring ones) from Claude.",
   "long_description": "A small local MCP server built on EventKit. It lets Claude list your calendars, read upcoming events and create new events with location, notes and recurrence rules. macOS only; the first use asks for calendar access.",
